@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,6 +25,11 @@ namespace ShapesLibrary
         public override double FindPerimeter()
         {
             return 2 * Math.PI * Radius;
+        }
+
+        public override void Draw(Graphics g)
+        {
+            g.DrawEllipse(new Pen(Color.FromName(BorderColor)), X, Y, (float) (Radius * 2), (float) (Radius*2));
         }
     }
 }
