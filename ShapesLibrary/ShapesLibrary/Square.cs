@@ -27,7 +27,7 @@ namespace ShapesLibrary
 
         public override void Draw(Graphics g)
         {
-            g.DrawRectangle(new Pen(Color.FromName(BorderColor)), X, Y, (float)Length, (float)Length);
+            g.DrawRectangle(new Pen(BorderColor), X, Y, (float)Length, (float)Length);
         }
     }
 }

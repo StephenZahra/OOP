@@ -12,9 +12,14 @@ namespace ShapesLibrary
         public double Radius { get; set; }
         public Circle(int x, int y, double radius): base(x, y)
         {
-            X = x;
-            Y = y;
+            //X = x;
+            //Y = y;
             Radius = radius;
+        }
+
+        public Circle(int x, int y, double radius, Color borderColor): this(x, y, radius)
+        {
+            BorderColor = borderColor;
         }
 
         public override double FindArea()
@@ -29,7 +34,7 @@ namespace ShapesLibrary
 
         public override void Draw(Graphics g)
         {
-            g.DrawEllipse(new Pen(Color.FromName(BorderColor)), X, Y, (float) (Radius * 2), (float) (Radius*2));
+            g.DrawEllipse(new Pen(BorderColor), X, Y, (float) (Radius * 2), (float) (Radius*2));
         }
     }
 }
