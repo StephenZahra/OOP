@@ -32,11 +32,12 @@ namespace Worksheet2
             }
         }
 
-        public void FillTank(int monetaryAmount)
+        public string FillTank(int monetaryAmount)
         {
             if(Manufacturer == null || Colour == null || OdometerReading == null || TypeOfFuel == null || Litres < 0)
             {
                 Console.WriteLine("Please enter car details before refueling");
+                return null;
             }
             else
             {
@@ -45,27 +46,31 @@ namespace Worksheet2
                     Console.WriteLine("Insert the amount of money you wish to input: ");
                     monetaryAmount = Convert.ToInt32(Console.ReadLine());
                     Litres += monetaryAmount * 0.71;
-                    Console.WriteLine(Litres.ToString());
+                    string newFuelAmount = Litres.ToString();
+                    return newFuelAmount;
                 }
                 else if(TypeOfFuel == "petrol")
                 {
                     Console.WriteLine("Insert the amount of money you wish to input: ");
                     monetaryAmount = Convert.ToInt32(Console.ReadLine());
                     Litres += monetaryAmount * 0.65;
-                    Console.WriteLine(Litres.ToString());
+                    string newFuelAmount = Litres.ToString();
+                    return newFuelAmount;
                 }
             }
+            return null;
         }
 
         public string CarDetails(string fuel, string odometerReading, string colour)
         {
-            if(fuel != "petrol" || fuel != "Petrol" || fuel != "diesel" || fuel != "Diesel")
+            if(fuel == "petrol" || fuel == "Petrol" || fuel == "diesel" || fuel == "Diesel")
             {
-                return "The inputted type of fuel is incorrect";
+                return string.Empty;
             }
             else
             {
-                return string.Empty;
+                string message = string.Empty;
+                return (message = "The inputted type of fuel is incorrect");
             }
         }
 
