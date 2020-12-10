@@ -116,8 +116,35 @@ namespace BookSystem
 
                         break;
                     case 6:
+                        Console.WriteLine("Input isbn of book to be deleted: ");
+                        int bookISBN = Convert.ToInt32(Console.ReadLine());
+
+                        bs.Delete(bookISBN);
+                        Console.WriteLine("Book has been deleted");
+                        Console.WriteLine("Press any key to continue...");
+                        Console.ReadKey();
                         break;
                     case 7:
+                        Console.WriteLine("Input new isbn: ");
+                        int newISBN = Convert.ToInt32(Console.ReadLine());
+
+                        Console.WriteLine("Input new name: ");
+                        string newName = Console.ReadLine();
+
+                        Console.WriteLine("Input new year: ");
+                        int newYear = Convert.ToInt32(Console.ReadLine());
+
+                        Console.WriteLine("Input new publisher: ");
+                        string newPublisher = Console.ReadLine();
+
+                        Console.WriteLine("Input new author: ");
+                        string newAuthor = Console.ReadLine();
+
+                        Console.WriteLine("Input new genre: ");
+                        int newGenre = Convert.ToInt32(Console.ReadLine());
+
+                        bs.Update(newISBN, newName, newYear, newPublisher, newAuthor, newGenre);
+
                         break;
                     case 8:
                         Console.WriteLine("Author\t\tTotal");

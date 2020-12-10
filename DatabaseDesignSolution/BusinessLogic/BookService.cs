@@ -81,6 +81,11 @@ namespace BusinessLogic
         {
             var myBookToUpdate = _booksRepo.GetBook(isbn);
 
+            if(myBookToUpdate == null)
+            {
+                Console.WriteLine("ISBN does not exist, please enter an existing ISBN");
+            }
+
             myBookToUpdate.Name = newName;
             myBookToUpdate.Year = newYear;
             myBookToUpdate.Publisher = newPublisher;
