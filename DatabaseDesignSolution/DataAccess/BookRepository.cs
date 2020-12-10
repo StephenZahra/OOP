@@ -7,6 +7,7 @@ using Common;
 
 namespace DataAccess
 {
+    //In the database we will implement code that will interact DIRECTLY with the database
     public class BookRepository : ConnectionClass
     {
         public BookRepository() : base()
@@ -23,6 +24,22 @@ namespace DataAccess
         public IQueryable<Book> GetBooks()
         {
             return MyConnection.Books;
+        }
+
+        public void Delete(Book b)
+        {
+            MyConnection.Books.Remove(b);
+            MyConnection.SaveChanges();
+        }
+
+        public void Update(Book withNewDetails)
+        {
+            MyConnection.SaveChanges();
+        }
+
+        public Book GetBook(int isbn)
+        {
+            return MyConnection.Books.SingleOrDefault(x => x.Isbn == isbn);
         }
     }
 }

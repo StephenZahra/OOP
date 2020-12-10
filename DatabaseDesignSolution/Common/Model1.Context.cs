@@ -25,8 +25,9 @@ namespace Common
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Review> Reviews { get; set; }
         public virtual DbSet<Book> Books { get; set; }
         public virtual DbSet<Genre> Genres { get; set; }
-        public virtual DbSet<Review> Reviews { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
     }
 }

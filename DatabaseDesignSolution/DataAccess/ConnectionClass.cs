@@ -12,6 +12,8 @@ namespace DataAccess
         public LibraryBooksEntities MyConnection { get; set; }
         public ConnectionClass()
         {
+            //instance which is of type LibraryBook contains methods that will allow me to READ and WRITE
+            //data into or from the database
             MyConnection = new LibraryBooksEntities();
         }
 
